@@ -1,0 +1,10 @@
+builders:
+  assets_encrypt_builder:
+    import: "package:flutter_asset_encrypt/builder.dart"
+    builder_factories: [ "assetsEncryptBuilder" ]
+    # 只是用来触发builder
+    build_extensions: { "pubspec.yaml": [ ".dart_tool/generated/.asset_encrypt_trigger_cache.dart" ] }
+    auto_apply: none # dependents
+    build_to: cache # source
+
+    applies_builders: [ "source_gen|combining_builder" ]

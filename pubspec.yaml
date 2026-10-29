@@ -1,0 +1,31 @@
+name: flutter_asset_encrypt
+description: Collect the resource file by scanning assets defined in the pubspec.yaml, and encrypt.
+repository: https://github.com/yangxiaoweihn/flutter_asset_encrypt
+version: 1.0.0
+
+environment:
+  sdk: '>=2.12.0 <4.0.0'
+
+dependencies:
+  args: ^2.1.1
+  dart_style: ^2.0.2
+  glob: ^2.0.1
+  io: ^1.0.3
+  path: ^1.8.0
+  yaml: ^3.1.0
+  yaml_edit: ^2.2.4
+  encrypt: ^5.0.0 # AES 加解密
+  function_tree: ^0.9.1
+
+  cryptography: ^2.9.0
+
+  flutter_asset_collector:
+    git:
+      url: https://github.com/yangxiaoweihn/flutter_asset_collector.git
+      ref: 1.0.0
+
+dev_dependencies:
+  build: ^2.0.0
+
+executables:
+  assets_enc: asset_encrypt_bin

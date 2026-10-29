@@ -1,0 +1,30 @@
+exclude:
+  - "**/add*.png"
+
+include:
+  - "**/a*.png"
+  - "**/b*"
+
+src: .
+
+# 生成的资源映射文件
+# 该builder的作用时机不确定 资源生成映射文件后进行混淆的处理 需要对该映射文件进行处理
+input_r_files: [xxx.dart]
+
+# 构建加密后 输出到的目录名称 同时会去修改pubspec.yaml文件
+output: fae_xxx
+
+config_file: 'xxx.yaml'
+
+enc_bytes_len: null # 加密字节长度 支持简单的数学表达式 null全加密
+enc_key: '888888888888888' # AES加密key 128/192/256 bits
+enc_mode: 'GCM' # CBC CFB-64 CTR ECB OFB-64/GCTR OFB-64 SIC GCM
+enc_padding: 'PKCS7' # PKCS5 PKCS7 Zeros ANSIX923 ISO10126 ISO7816-4  注意 不是所有mode都支持padding
+# 需要填充padding的 CBC、ECB
+
+watch: false
+
+# 用来简单debug
+# true 不修改pubspec.yaml 在.dart_tool/.pubspec/生成pubspec_xxx.yaml
+# 单独使用 与其他builder共同修改pubspec.yaml时不一定结果正确
+dbg_pubspec: false

@@ -1,0 +1,20 @@
+exclude:
+  - "**/add*.png"
+#  - "**_**"
+
+include:
+  - "**/a*.png"
+  - "**/b*"
+  - "**/c*"
+
+# 构建加密后 输出到的目录名称 同时会去修改pubspec.yaml文件
+output_dir: FCXX
+watch: false
+# watch: true
+
+preview: false
+
+# output: lib/const/r.dart
+# output: lib/const/resource.dart
+
+# name: RRR
